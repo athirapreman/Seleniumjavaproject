@@ -2,11 +2,22 @@ package selenium1;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
 
 public class firstpgm {
-    public static void main(String[] args) throws InterruptedException {
+
+        @Test
+        public void testselenium () {
+
         WebDriver driver = new ChromeDriver();
-        driver.get("https://ssdiary.com");        Thread.sleep(5000);
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        driver.get("https://ssdiary.com");
+
+        driver.manage().window().maximize();
         driver.quit();
     }
-}
+    }
